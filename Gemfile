@@ -5,6 +5,10 @@ gem "rails", "~> 7.1.3"
 
 gem "cpf_cnpj"
 
+gem 'rails_performance'
+
+gem 'will_paginate'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 

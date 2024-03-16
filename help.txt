@@ -1,0 +1,16 @@
+Iniciar Redis:
+
+    sudo service redis-server start
+
+Iniciar projeto:
+
+    bin/dev ou rails s
+
+Executar script seeds:
+
+    db:seed
+
+Baixar dependencias(gemFile):
+
+    bundle install
+

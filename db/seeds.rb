@@ -14,7 +14,9 @@ Debt.destroy_all
 User.create(email: 'admin@admin.com', password: '123456') 
 #People.create name: 'Admin', national_id: '11111111111', cpf_or_cnpj: '11111111111', active: true
 
-50.times do
+1000.times do |counter|
+  percent = (counter.to_f / 1000 * 100).to_i
+  puts "creating user: #{counter}, #{percent}%"
     User.create(
       email: Faker::Internet.email,
       password: Faker::Internet.password
@@ -22,7 +24,9 @@ User.create(email: 'admin@admin.com', password: '123456')
 end
 user_ids = User.pluck(:id)
 
-100.times do
+3000.times do |counter|
+  percent = (counter.to_f / 3000 * 100).to_i
+  puts "creating Person: #{counter}, #{percent}%"
     Person.create(
       name: Faker::Name.name,
       phone_number: Faker::PhoneNumber.phone_number,
@@ -33,7 +37,9 @@ user_ids = User.pluck(:id)
 end
 person_ids = Person.pluck(:id)
 
-500.times do
+5000.times do |counter|
+  percent = (counter.to_f / 5000 * 100).to_i
+  puts "creating Debt: #{counter}, #{percent}%"
     Debt.create(
       person_id: person_ids.sample,
       amount: rand(1..1000),
