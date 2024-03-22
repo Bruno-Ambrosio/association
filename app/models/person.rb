@@ -8,6 +8,21 @@ class Person < ApplicationRecord
   validate :cpf_or_cnpj
   self.per_page = 50
 
+  # TODO: refactor me
+  #
+  # - improve performance using SQL
+  # - sum payments
+  # - rename to "balance"
+  def total_debts
+    total = 0
+
+    debts.each do |debt|
+      total -= debt.amount
+    end
+
+    total
+  end
+
   private
 
   def cpf_or_cnpj
