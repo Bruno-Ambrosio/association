@@ -7,9 +7,10 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-User.destroy_all
-Person.destroy_all
-Debt.destroy_all
+# User.destroy_all
+# Person.destroy_all
+# Debt.destroy_all
+Payment.destroy_all
 
 User.create(email: 'admin@admin.com', password: '123456') 
 #People.create name: 'Admin', national_id: '11111111111', cpf_or_cnpj: '11111111111', active: true
@@ -41,6 +42,16 @@ person_ids = Person.pluck(:id)
   percent = (counter.to_f / 5000 * 100).to_i
   puts "creating Debt: #{counter}, #{percent}%"
     Debt.create(
+      person_id: person_ids.sample,
+      amount: rand(1..1000),
+      observation: Faker::Lorem.sentence
+    )
+end
+
+5000.times do |counter|
+  percent = (counter.to_f / 5000 * 100).to_i
+  puts "creating Payment: #{counter}, #{percent}%"
+    Payment.create(
       person_id: person_ids.sample,
       amount: rand(1..1000),
       observation: Faker::Lorem.sentence

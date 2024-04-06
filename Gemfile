@@ -7,6 +7,9 @@ gem "cpf_cnpj"
 
 gem 'rails_performance'
 
+gem 'htmlbeautifier'
+
+gem 'solargraph'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 

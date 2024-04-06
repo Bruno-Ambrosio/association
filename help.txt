@@ -8,9 +8,12 @@ Iniciar projeto:
 
 Executar script seeds:
 
-    db:seed
+    rails db:seed
 
 Baixar dependencias(gemFile):
 
     bundle install
 
+Iniciar o solargraph:
+
+    solargraph socket
