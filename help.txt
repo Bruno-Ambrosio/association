@@ -17,3 +17,7 @@ Baixar dependencias(gemFile):
 Iniciar o solargraph:
 
     solargraph socket
+
+Fazer migrate do banco:
+
+    rails db:migrate
