@@ -21,3 +21,7 @@ Iniciar o solargraph:
 Fazer migrate do banco:
 
     rails db:migrate
+
+Ligar rails cache
+
+    bin/rails dev:cache

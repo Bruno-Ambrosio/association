@@ -9,8 +9,16 @@ class Person < ApplicationRecord
   validate :cpf_or_cnpj
   self.per_page = 50
 
+  def person_debts
+    -debts.sum(:amount)
+  end
+  
+  def person_payments
+    payments.sum(:amount)
+  end
+
   def update_balance!
-    update(balance: (-debts.sum(:amount) + payments.sum(:amount)))
+    update(balance: person_debts + person_payments)
   end
 
   private
