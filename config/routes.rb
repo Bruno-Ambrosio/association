@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'dashboard/index'
   resources :payments
   devise_for :users
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   resources :debts, except: %i(edit update show)
 
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
+  get 'reports/balance', to: 'reports#balance'
 
   # Defines the root path route ("/")
   root 'dashboard#index'

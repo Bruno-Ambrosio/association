@@ -25,3 +25,6 @@ Fazer migrate do banco:
 Ligar rails cache
 
     bin/rails dev:cache
+
+utilizando backgroundJobs para criar arquivo relatorio csv de todos os usuarios
+e enviar no email como anexo

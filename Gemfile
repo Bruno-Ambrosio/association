@@ -9,6 +9,8 @@ gem 'rails_performance'
 
 gem 'htmlbeautifier'
 
+gem 'letter_opener_web', '~> 2.0', group: :development
+
 gem "chartkick"
 
 gem 'solargraph'

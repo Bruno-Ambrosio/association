@@ -4,6 +4,7 @@ class DashboardService
     end
   
     def dashboard_data
+      Rails.cache.fetch("#{cache_key}/dashboard_data", expires_in: 10.minutes) do
       {
         active_people_pie_chart: active_people_pie_chart,
         total_debts: total_debts,
@@ -16,6 +17,7 @@ class DashboardService
         bottom_person: bottom_person
       }
     end
+  end
     
     private
 
